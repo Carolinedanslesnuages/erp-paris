@@ -1,0 +1,41 @@
+{
+  "type": "api",
+  "dsfr": false,
+  "personnaliser": [
+    "PROJET.md",
+    "README.md",
+    "AGENTS.md",
+    "docker-compose.yml",
+    "docs/adr/0001-choix-de-la-stack.md",
+    "docs/adr/README.md",
+    "pyproject.toml",
+    "app/__init__.py",
+    "app/main.py",
+    "tests/test_sante.py",
+    "app/config.py"
+  ],
+  "controlesRequis": [
+    "Anti-fuite (gitleaks)",
+    "API (lint, types, tests)",
+    "Dépendances (paquet réel, version exacte, licence)",
+    "Titre de PR (Conventional Commits, semver)",
+    "Taille des fichiers (une responsabilité par fichier)"
+  ],
+  "controles": [
+    "cd /app && ruff check . && ruff format --check . && mypy app && pytest"
+  ],
+  "apercu": {
+    "image": "python:3.13-slim",
+    "base": "postgres",
+    "npm": [],
+    "pip": [
+      "."
+    ],
+    "avant": [
+      "cd /app && alembic upgrade head"
+    ],
+    "arrierePlan": [],
+    "principal": "cd /app && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload",
+    "port": 8000
+  }
+}

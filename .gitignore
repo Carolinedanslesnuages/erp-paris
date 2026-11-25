@@ -1,0 +1,36 @@
+# --- Python
+__pycache__/
+*.py[cod]
+.venv/
+.venv-verification/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.env
+coverage/
+.DS_Store
+
+# --- Sorties locales sensibles — ne pas committer
+private/
+
+# --- Secrets ---
+.env.*
+!.env.example
+*.secret
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+*.kubeconfig
+kubeconfig*
+*.tfstate
+*.tfstate.*
+secrets/
+
+# --- Éditeurs ---
+.idea/
+.vscode/*.local
+*.swp
+*.tsbuildinfo
