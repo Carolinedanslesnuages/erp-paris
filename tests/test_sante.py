@@ -22,7 +22,7 @@ def test_documentation_interactive_et_description_openapi() -> None:
     assert "swagger-ui" in client.get("/api/docs").text
     openapi = client.get("/api/openapi.json").json()
     assert openapi["info"]["title"] == "ERP Paris"
-    assert list(openapi["paths"]) == ["/api"]
+    assert "/api" in openapi["paths"]
 
 
 def test_version_en_repli_dev_hors_image() -> None:

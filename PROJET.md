@@ -12,4 +12,4 @@
 | Lancer l'API | `uvicorn app.main:app --reload` |
 
 ## Stories réalisées
-_(aucune pour l'instant)_
+- Demande libre #1 : recherche des établissements parisiens recevant du public (code postal, type, enseigne) à partir du fichier de la Préfecture de police nettoyé.

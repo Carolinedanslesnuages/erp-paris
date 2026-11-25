@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI
 
-from app import sante, version
+from app import erp, sante, version
 
 app = FastAPI(
     title="ERP Paris",
@@ -14,3 +14,4 @@ app = FastAPI(
 )
 app.include_router(sante.routes)
 app.include_router(version.routes)
+app.include_router(erp.routes)
